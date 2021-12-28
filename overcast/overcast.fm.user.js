@@ -2,8 +2,8 @@
 // @name        Volume Control for Overcast
 // @description Adds a volume control on Overcast.fm podcast episode pages.
 // @namespace   https://www.github.com/brycehebert/userscripts
-// @version     1.0.0
-// @grant       none
+// @version     1.0.1
+// @grant       GM_addStyle
 // @match       https://overcast.fm/+*
 // @run-at      document-idle
 // @updateURL   https://raw.githubusercontent.com/brycehebert/userscripts/master/overcast/overcast.fm.user.js
@@ -94,7 +94,11 @@ if (player && playerControls) {
   playerControls.insertAdjacentElement("beforebegin", slider);
   slider.insertAdjacentElement("beforebegin", svgElement);
 
-  const style = document.createElement("style");
-  style.innerHTML = sliderStyles;
-  document.head.appendChild(style);
+  if (GM.info.scriptHandler === "Greasemonkey") {
+    const style = document.createElement("style");
+    style.innerHTML = sliderStyles;
+    document.head.appendChild(style);
+  } else {
+    GM_addStyle(sliderStyles);
+  }
 }
