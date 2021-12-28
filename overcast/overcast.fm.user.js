@@ -2,7 +2,7 @@
 // @name        Volume Control for Overcast
 // @description Adds a volume control on Overcast.fm podcast episode pages.
 // @namespace   https://www.github.com/brycehebert/userscripts
-// @version     1.0.1
+// @version     1.0.2
 // @grant       GM_addStyle
 // @match       https://overcast.fm/+*
 // @run-at      document-idle
@@ -48,7 +48,7 @@ if (player && playerControls) {
     height: 15px;
     width: 15px;
     border-radius: 50%;
-    border-size: none;
+    border: none;
     background: #fc7e0f;
   }
   #GMvolumeSlider::-webkit-slider-runnable-track  {
