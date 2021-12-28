@@ -12,15 +12,6 @@
 const player = document.getElementById("audioplayer");
 const playerControls = document.getElementById("playcontrols_container");
 
-const randomString = (length) => {
-  let text = "";
-  const possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-  for(let i = 0; i < length; i++) {
-      text += possible.charAt(Math.floor(Math.random() * possible.length));
-  }
-  return text;
-}
-
 if (player && playerControls) {
   let slider = document.createElement("input");
   const sliderAttributes = {
@@ -104,7 +95,6 @@ if (player && playerControls) {
   slider.insertAdjacentElement("beforebegin", svgElement);
 
   const style = document.createElement("style");
-  style.setAttribute("nonce", randomString());
   style.innerHTML = sliderStyles;
   document.head.appendChild(style);
 }
