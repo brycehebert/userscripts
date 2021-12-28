@@ -39,7 +39,7 @@ if (player && playerControls) {
     height: 15px;
     width: 15px;
     border-radius: 50%;
-    border-size: none;
+    border: none;
     background: #fc7e0f;
   }
   
