@@ -95,6 +95,7 @@ if (player && playerControls) {
   slider.insertAdjacentElement("beforebegin", svgElement);
 
   const style = document.createElement("style");
+  style.setAttribute("nonce", "someNonceThing")
   style.innerHTML = sliderStyles;
   document.head.appendChild(style);
 }
